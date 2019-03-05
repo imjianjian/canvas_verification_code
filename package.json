@@ -1,0 +1,25 @@
+{
+  "name": "canvas_verification_code",
+  "version": "1.0.0",
+  "description": "build verification code by canvas",
+  "main": "./src/index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "parcel": "^1.11.0",
+    "parcel-bundler": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "example": "parcel ./example/index.html -d ./example/dist",
+    "build":"parcel build ./src/index.js -d ./dist"
+  },
+  "keywords": [
+    "verification",
+    "code",
+    "canvas"
+  ],
+  "author": "imjianjian",
+  "license": "ISC"
+}
