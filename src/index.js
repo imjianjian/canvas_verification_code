@@ -9,18 +9,18 @@ export default class VerificationCode {
   constructor(id) {
     let canvas = document.getElementById("canvas");
     this.ctx = canvas.getContext("2d");
+    this.value;
   }
 
   drawCode() {
-    let code = "";
+    this.value="";
     for (let i = 0; i < 4; i++) {
       this.ctx.font = `${randomSize()}px ${randomFont()}`;
       this.ctx.fillStyle = randomColor();
       let word = randomWord();
       this.ctx.fillText(word, 50 * i + 10, 40);
-      code += word;
+      this.value += word;
     }
-    return code;
   }
 
   drawLine(num) {
@@ -53,13 +53,16 @@ export default class VerificationCode {
 
   refresh() {
     this.ctx.clearRect(0, 0, 200, 50);
-    let code = this.drawCode();
+    this.drawCode();
     this.drawLine(5);
     this.drawPoint(50);
-    return code;
   }
 
   create(){
-    return this.refresh();
+    this.refresh();
+  }
+
+  check(str){
+    return str.toLocaleLowerCase() ===this.value.toLocaleLowerCase();
   }
 }
