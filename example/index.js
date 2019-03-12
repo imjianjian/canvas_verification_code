@@ -6,7 +6,7 @@ let verification_code = new VerificationCode("canvas"); //参数为页面中canv
 // 创建验证码
 verification_code.create();
 
-// 刷新惭怍
+// 刷新操作
 document.getElementById("refreshBtn").onclick = () => {
   verification_code.refresh();
 };
