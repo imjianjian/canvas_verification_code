@@ -7,7 +7,7 @@ import {
 
 export default class VerificationCode {
   constructor(id) {
-    let canvas = document.getElementById("canvas");
+    let canvas = document.getElementById(id);
     this.ctx = canvas.getContext("2d");
     this.value;
   }
